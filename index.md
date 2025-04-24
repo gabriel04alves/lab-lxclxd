@@ -132,6 +132,55 @@ Para excluir um container em execução, adicione a flag `--force`:
 lxc delete meu-container --force
 ```
 
+### Testando com uma aplicação web simples
+
+Depois de criar e iniciar o container, vamos instalar e rodar um servidor web simples (Nginx) para verificar se tudo está operando como esperado.
+
+1. **Atualizar repositórios e instalar o Nginx**
+
+   ```bash
+   lxc exec meu-container -- apt update
+   lxc exec meu-container -- apt install -y nginx
+   ```
+
+2. **Verificar serviço no container**
+
+   ```bash
+   lxc exec meu-container -- systemctl status nginx
+   ```
+
+   Você deve ver algo como:
+
+   ```
+   ● nginx.service - A high performance web server and a reverse proxy server
+      Loaded: loaded (/lib/systemd/system/nginx.service; enabled)
+      Active: active (running) since ...
+   ```
+
+3. **Testar localmente dentro do container**
+   ```bash
+   lxc exec meu-container -- curl -I http://localhost
+   ```
+   Saída esperada:
+   ```
+   HTTP/1.1 200 OK
+   Server: nginx/1.18.0 (Ubuntu)
+   ```
+4. **Descobrir o IP do container**
+
+   ```bash
+   lxc list meu-container -c4 --format=csv
+   ```
+
+   Isso retorna algo como `10.103.53.1`.
+
+5. **Acessar o servidor web a partir do host**  
+   No seu host, abra um navegador ou use `curl`:
+   ```bash
+   curl http://10.103.53.1
+   ```
+   Você deverá ver o HTML padrão do Nginx (“Welcome to nginx!”).
+
 ### Criar containers de outras distribuições
 
 Para listar as imagens disponíveis no servidor oficial:
