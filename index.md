@@ -157,6 +157,30 @@ lxc launch images:centos/7 meu-centos
 - `images:centos/7`: Especifica a imagem do CentOS 7 do repositório remoto "images"
 - `meu-centos`: Nome personalizado para o container
 
+### Outras Fontes de Imagens LXC/LXD
+
+Além do repositório padrão `ubuntu:` e `images:`, você pode usar outras fontes de imagens:
+
+- **suse:** imagens oficiais da SUSE Enterprise
+
+  ```bash
+  lxc image list images:suse/15.2
+  lxc launch images:suse/15.2 meu-suse
+  ```
+
+- **snapshots e mirrors privados:** você mesmo pode hospedar um LXD Image Server e adicionar como remoto
+
+  ```bash
+  lxc remote add meu-servidor https://meu-lxd-images.local
+  lxc image list meu-servidor:
+  ```
+
+- **Registro Docker Hub (via importação):** caso queira converter uma imagem Docker em LXD
+  ```bash
+  lxc image import docker://nginx --alias nginx-docker
+  lxc launch nginx-docker meu-nginx-docker
+  ```
+
 ## 5. Comparação com Docker (prática)
 
 ### Diferenças funcionais
