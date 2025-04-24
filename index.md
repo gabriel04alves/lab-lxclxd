@@ -174,10 +174,16 @@ Depois de criar e iniciar o container, vamos instalar e rodar um servidor web si
 
    Isso retorna algo como `10.103.53.1`.
 
-5. **Acessar o servidor web a partir do host**  
+5. **Expor o servidor Nginx**
+
+   ```bash
+   lxc config device add meu-container nginx-port80 proxy listen=tcp:0.0.0.0:8081 connect=tcp:127.0.0.1:80
+   ```
+
+6. **Acessar o servidor web a partir do host**  
    No seu host, abra um navegador ou use `curl`:
    ```bash
-   curl http://10.103.53.1
+   curl http://localhost:8081
    ```
    Você deverá ver o HTML padrão do Nginx (“Welcome to nginx!”).
 
