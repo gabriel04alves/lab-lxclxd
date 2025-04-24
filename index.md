@@ -132,7 +132,7 @@ Para excluir um container em execução, adicione a flag `--force`:
 lxc delete meu-container --force
 ```
 
-### Testando com uma aplicação web simples
+### **Testando com uma aplicação web simples**
 
 Depois de criar e iniciar o container, vamos instalar e rodar um servidor web simples (Nginx) para verificar se tudo está operando como esperado.
 
