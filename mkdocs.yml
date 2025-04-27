@@ -1,0 +1,38 @@
+site_name: Lab LXC/LXD
+docs_dir: docs
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+nav:
+  - Início: index.md
+  - Introdução: introduction.md
+  - Pré requisitos: prerequisites.md
+  - Instalação: installation.md
+  - Execução de um container: run.md
+  - Comparação com o Docker: docker.md
+  - Conclusão: end.md
+  - Referências: refs.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+
+extra:
+  generator: false
