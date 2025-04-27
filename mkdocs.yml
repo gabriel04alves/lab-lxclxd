@@ -22,6 +22,7 @@ nav:
   - Instalação: installation.md
   - Execução de um container: run.md
   - Comparação com o Docker: docker.md
+  - Materiais complementares: complements.md
   - Conclusão: end.md
   - Referências: refs.md
 

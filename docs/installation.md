@@ -6,7 +6,7 @@ Apesar do nome, neste contexto o `lxc` é apenas o **cliente que se comunica com
 > **Observação:** O **LXC** continua presente nos bastidores, é ele que, junto com o kernel do Linux, realiza a criação e o gerenciamento real dos contêineres.  
 > O **LXD** apenas facilita a interação, adicionando funcionalidades avançadas como clustering, redes virtuais, armazenamento em pools e APIs REST.
 
-<img src="/images/example-cli.png" alt="CLI layers" style="max-width: 15vw; display: flex; justify-self: center;">
+<img src="https://github.com/gabriel04alves/lab-lxclxd/blob/main/docs/images/example-cli.png?raw=true" alt="CLI layers" style="max-width: 15vw; display: flex; justify-self: center;">
 
 ---
 
