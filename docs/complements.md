@@ -2,7 +2,7 @@
 
 - [Documentação LXC](https://linuxcontainers.org/lxc/documentation/)
 - [Manual de configuração LXC](https://linuxcontainers.org/lxc/manpages/man5/lxc.container.conf.5.html)
-- [Documentação LXD](https://linuxcontainers.org/lxd/docs/)
+- [Documentação LXD](https://documentation.ubuntu.com/lxd/stable-5.21/)
 - [LXD no GitHub](https://github.com/canonical/lxd)
 
 ### **Notas Importantes**
